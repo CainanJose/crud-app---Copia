@@ -1,0 +1,46 @@
+<form >
+  <form class="row g-5 d-flex justify-content-center mt-2 bg-secondary p-3">
+
+      <div class="col-md-4">
+        <label for="validationDefault01" class="form-label">First name</label>
+        <input type="text" class="form-control" id="validationDefault01"  [(ngModel)]="salvar.name" [ngModelOptions]="{standalone: true}" required>
+      </div>
+
+      <div class="col-md-4">
+        <label for="validationDefault02" class="form-label">Last name</label>
+        <input type="text" class="form-control" id="validationDefault02" [(ngModel)]="salvar.sobrenome" [ngModelOptions]="{standalone: true}" required>
+      </div>
+
+      <div class="col-md-4">
+        <label for="validationDefaultUsername" class="form-label">E-mail</label>
+        <div class="input-group">
+          <span class="input-group-text" id="inputGroupPrepend2">@</span>
+          <input type="text" class="form-control" id="validationDefaultUsername" [(ngModel)]="salvar.email" [ngModelOptions]="{standalone: true}" aria-describedby="inputGroupPrepend2" required>
+        </div>
+      </div>
+      
+      <div class="col-md-5">
+          <label for="inputPassword5" class="form-label">Password</label>
+          <input type="password" class="form-control" aria-describedby="passwordHelpBlock" required>
+          <div id="passwordHelpBlock" class="form-text">
+              Sua senha deve ter de 8 a 20 caracteres, conter letras e números e não deve conter espaços, caracteres especiais ou emoji.
+          </div>
+      </div>
+
+      <div class="col-md-3">
+        <label for="validationDefault04" class="form-label">Charge</label>
+        <select class="form-select" id="validationDefault04" required>
+          <option selected disabled value="">Select</option>
+          <option>Engenheiro de FE</option>
+          <option>Engenheiro de BE</option>
+          <option>Analista de dados</option>
+          <option>Lider Técnico</option>
+        </select>
+      </div>
+
+      <div class="col-12 g-5 d-flex justify-content-center mt-5">
+        <button class="btn btn-primary" type="button" routerLink="/app/users" (click)="save()">Save</button> 
+      </div>
+      
+    </form>
+</form>
