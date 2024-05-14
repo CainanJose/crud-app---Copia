@@ -1,5 +1,89 @@
-.full-height {
-    min-height: 100%;
-    height: 80vh;
-  }
-  
+body {
+  background: linear-gradient(#D9597B, #815A8C);
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.formulario {
+  padding: 70px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+.formulario label {
+  font-weight: bold;
+}
+
+.formulario input[type="text"],
+.formulario input[type="email"],
+.formulario input[type="password"],
+.formulario select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.formulario input[type="text"]:focus,
+.formulario input[type="email"]:focus,
+.formulario input[type="password"]:focus,
+.formulario select:focus {
+  outline: none;
+  border-color: #000;
+}
+
+.formulario .form-text {
+  margin-top: 5px;
+  font-size: 14px;
+  color: red;
+  font-style: italic;
+}
+
+.formulario .btn-primary {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0D0D0D;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.formulario .btn-primary:hover {
+  background-color: #021E73;
+  cursor: pointer;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 30px;
+  color: #000;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+input:invalid,
+select:invalid {
+  border-color: red;
+}
+
+input:valid,
+select:valid {
+  border-color: green;
+}
