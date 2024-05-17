@@ -1,18 +1,21 @@
-.full-height {
-  min-height: 100%;
-  height: 80vh;
-}
-
 body {
-  background-color: #fff;
+  background: linear-gradient(#D9597B, #815A8C);
   margin: 0;
   font-family: Arial, sans-serif;
   font-size: smaller;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.container {
+.full-height {
+  width: 100%;
+  max-width: 800px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
 header {
@@ -24,26 +27,23 @@ header {
   margin-bottom: 20px;
 }
 
-.total-users {
-  background-color: #6d6d6d;
-  color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-}
-
 .total-users .count {
   font-size: 2em;
   margin-top: 10px;
 }
 
-.user-roles h2 {
-  margin-bottom: 10px;
+.user-roles h5 {
+  font-weight: bold;
+  font-size: 25px;
+  color: #000;
+  text-align: center;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 10px;
+  background-color: white;
 }
 
 table, th, td {
