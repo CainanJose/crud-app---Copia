@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="edit-user.component.css">
+</head>
+<body>
+    <div class="container">
+        <form [formGroup]="cadastroUsuario" class="formulario">
+            <h1>Editar usuário</h1>
+
+            <div class="dados">
+                <label for="validationDefault01" class="form-label">Nome</label>
+                <input type="text" class="form-control" formControlName="name">
+                <div *ngIf="cadastroUsuario.get('name')?.invalid && (cadastroUsuario.get('name')?.dirty || cadastroUsuario.get('name')?.touched)">
+                    <div class="text-danger">Nome é Obrigatorio</div>
+                </div>
+            </div>
+
+            <div class="dados">
+                <label for="validationDefault02" class="form-label">Sobrenome</label>
+                <input type="text" class="form-control" formControlName="sobrenome">
+                <div *ngIf="cadastroUsuario.get('sobrenome')?.invalid && (cadastroUsuario.get('sobrenome')?.dirty || cadastroUsuario.get('sobrenome')?.touched)">
+                    <div class="text-danger">Sobrenome é obrigatório</div>
+                </div>
+            </div>
+
+            <div class="dados">
+                <label for="validationDefaultUsername" class="form-label">E-mail</label>
+                <input type="email" class="form-control" formControlName="email">
+                <div *ngIf="cadastroUsuario.get('email')?.invalid && (cadastroUsuario.get('email')?.dirty || cadastroUsuario.get('email')?.touched)">
+                    <div class="text-danger">E-mail é obrigatório</div>
+                </div>
+            </div>
+
+            <div class="dados">
+                <label for="inputPassword5" class="form-label">Senha</label>
+                <input type="password" class="form-control" formControlName="senha">
+
+                <div *ngIf="cadastroUsuario.get('senha')?.invalid && (cadastroUsuario.get('senha')?.dirty || cadastroUsuario.get('senha')?.touched)">
+                    <div>
+                        <div class="text-danger">Sua senha deve ter no mínimo 6 dígitos e no máximo 20</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dados">
+                <label for="inputPassword5" class="form-label">Confirmação Senha</label>
+                <input type="password" class="form-control" formControlName="confirmaSenha">
+
+                <div *ngIf="cadastroUsuario.get('confirmaSenha')?.invalid && (cadastroUsuario.get('confirmaSenha')?.dirty || cadastroUsuario.get('confirmaSenha')?.touched)">
+                    <div>
+                        <div class="text-danger">Sua senha deve ter no mínimo 6 dígitos e no máximo 20</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dados">
+                <label for="validationDefault04" class="form-label">Função</label>
+                <select class="form-select" formControlName="opcao">
+                    <option selected disabled value="">Selecione</option>
+                    <option>Engenheiro de FE</option>
+                    <option>Engenheiro de BE</option>
+                    <option>Analista de dados</option>
+                    <option>Lider Técnico</option>
+                </select>
+
+                <div *ngIf="cadastroUsuario.get('opcao')?.invalid">
+                    <div class="text-danger">Função é obrigatório</div>
+                </div>
+
+            </div>
+
+            <div class="d-flex justify-content-center mt-5">
+                <button class="btn btn-primary" type="button" (click)="onSubmit()" [disabled]="!cadastroUsuario.valid">Salvar</button> 
+            </div>
+        </form>
+    </div>
+</body>
+</html>
