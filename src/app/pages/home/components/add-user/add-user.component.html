@@ -36,6 +36,22 @@
             </div>
 
             <div class="dados">
+                <label for="validationDefault04" class="form-label">Função</label>
+                <select class="form-select" formControlName="opcao">
+                    <option selected disabled value="">Selecione</option>
+                    <option>Engenheiro de FE</option>
+                    <option>Engenheiro de BE</option>
+                    <option>Analista de dados</option>
+                    <option>Lider Técnico</option>
+                </select>
+
+                <div *ngIf="cadastroUsuario.get('opcao')?.invalid">
+                    <div class="text-danger">Função é obrigatório</div>
+                </div>
+
+            </div>
+
+            <div class="dados">
                 <label for="inputPassword5" class="form-label">Senha</label>
                 <input type="password" class="form-control" formControlName="senha">
 
@@ -57,21 +73,7 @@
                 </div>
             </div>
 
-            <div class="dados">
-                <label for="validationDefault04" class="form-label">Função</label>
-                <select class="form-select" formControlName="opcao">
-                    <option selected disabled value="">Selecione</option>
-                    <option>Engenheiro de FE</option>
-                    <option>Engenheiro de BE</option>
-                    <option>Analista de dados</option>
-                    <option>Lider Técnico</option>
-                </select>
 
-                <div *ngIf="cadastroUsuario.get('opcao')?.invalid">
-                    <div class="text-danger">Função é obrigatório</div>
-                </div>
-
-            </div>
 
             <div class="d-flex justify-content-center mt-5">
                 <button class="btn btn-primary" type="button" (click)="onSubmit()" [disabled]="!cadastroUsuario.valid">Salvar</button> 
